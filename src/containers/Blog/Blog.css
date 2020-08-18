@@ -1,0 +1,22 @@
+.Blog ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+.Blog li {
+    margin: 20px;
+}
+
+.Blog a {
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+}
+
+.Blog a:hover,
+.Blog a:active {
+    color: coral;
+}
