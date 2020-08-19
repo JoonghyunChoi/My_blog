@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Blog.css';
 import Posts from './Posts/Posts';
 import NewPost from './NewPost/NewPost';
-import { Route, Link } from 'react-router-dom';
+import { Route, NavLink, Switch } from 'react-router-dom';
 
 class Blog extends Component {
     render () {
@@ -11,19 +11,21 @@ class Blog extends Component {
                 <header>
                     <nav>
                         <ul>
-                            <Link to={{
+                            <NavLink exact activeClassName="my-active " to={{
                                 pathname: '/',
                                 hash: '#submit',
                                 search: 'quick-services=true' //query string
-                            }}>Home</Link>
-                            <Link to={{
+                            }}>Home</NavLink>
+                            <NavLink to={{
                                 pathname: '/new-post'
-                            }}>New Post</Link>
+                            }}>New Post</NavLink>
                         </ul>
                     </nav>
                 </header>
-                <Route path='/' exact component={Posts}/>
-                <Route path='/new-post' exact component={NewPost}/>
+                <Switch>
+                    <Route path='/new-post' exact component={NewPost}/>
+                    <Route path='/' component={Posts}/> 
+                </Switch>
             </div>
         )
     }

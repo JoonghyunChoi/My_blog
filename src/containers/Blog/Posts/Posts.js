@@ -1,7 +1,9 @@
 import React from 'react';
+import {Link, Route} from 'react-router-dom';
 import Post from '../../../components/Post/Post';
 import axios from '../../../axios-instance';
 import './Posts.css';
+import FullPost from '../FullPost/FullPost';
 
 class Posts extends React.Component {
     state = {
@@ -24,25 +26,24 @@ class Posts extends React.Component {
             .catch(error => console.log(error));
     }
 
-    postSelectHandler = (postID) => {
-
-    }
-
     render() {
-        console.log(this.props);
+        console.log(this.props)
         let posts = this.state.posts.map(post => 
-            <Post 
-                clicked={() => this.postSelectHandler(post.id)} 
-                key={post.id} 
-                title={post.title} 
-                author={post.author}
-            />
+            <Link to={'/' + post.id} key={post.id}>
+                <Post 
+                    key={post.id} 
+                    title={post.title} 
+                    author={post.author}
+                />
+            </Link>
         )
-        console.log(posts)
         return (
-            <section className="Posts">
-                {posts}
-            </section>
+            <div>
+                <section className="Posts">
+                    {posts}
+                </section>
+                <Route path="/:id" exact component={FullPost}/>
+            </div>
         )
     }
 }
