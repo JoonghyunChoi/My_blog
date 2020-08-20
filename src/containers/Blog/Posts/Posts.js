@@ -27,9 +27,8 @@ class Posts extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         let posts = this.state.posts.map(post => 
-            <Link to={'/' + post.id} key={post.id}>
+            <Link to={'/posts/' + post.id} key={post.id}>
                 <Post 
                     key={post.id} 
                     title={post.title} 
@@ -42,7 +41,7 @@ class Posts extends React.Component {
                 <section className="Posts">
                     {posts}
                 </section>
-                <Route path="/:id" exact component={FullPost}/>
+                <Route path={this.props.match.url + "/:id"} exact component={FullPost}/>
             </div>
         )
     }

@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense, lazy } from 'react';
 import './Blog.css';
 import Posts from './Posts/Posts';
-import NewPost from './NewPost/NewPost';
-import { Route, NavLink, Switch } from 'react-router-dom';
+import { Route, NavLink, Switch, Redirect } from 'react-router-dom';
+import NewPost from './NewPost/NewPost' ;
+// const NewPost = React.lazy(() => import('./NewPost/NewPost'));
 
 class Blog extends Component {
+    state = {
+        auth: true
+    }
     render () {
         return (
             <div className="Blog">
@@ -12,19 +16,25 @@ class Blog extends Component {
                     <nav>
                         <ul>
                             <NavLink exact activeClassName="my-active " to={{
-                                pathname: '/',
+                                pathname: '/posts',
                                 hash: '#submit',
                                 search: 'quick-services=true' //query string
-                            }}>Home</NavLink>
+                            }}>Home </NavLink>
                             <NavLink to={{
                                 pathname: '/new-post'
                             }}>New Post</NavLink>
                         </ul>
                     </nav>
                 </header>
+                {/* <Suspense fallback={<h1>Loading...</h1>}>
+                        <NewPost /> 
+                </Suspense> */}
                 <Switch>
-                    <Route path='/new-post' exact component={NewPost}/>
-                    <Route path='/' component={Posts}/> 
+                    {/* <Route render={() => <h1>Not Found</h1>}/> */}
+                    
+                    {this.state.auth ? <Route path='/new-post' exact component={NewPost}/> : null}
+                    <Route path='/posts' component={Posts}/> 
+                    <Redirect from="/" to="/posts"/>
                 </Switch>
             </div>
         )
@@ -32,4 +42,5 @@ class Blog extends Component {
 }
 
 export default Blog;
+
 
