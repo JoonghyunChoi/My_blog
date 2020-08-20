@@ -1,9 +1,8 @@
-import React, { Component, Suspense, lazy } from 'react';
+import React, { Component, Suspense } from 'react';
 import './Blog.css';
 import Posts from './Posts/Posts';
 import { Route, NavLink, Switch, Redirect } from 'react-router-dom';
-import NewPost from './NewPost/NewPost' ;
-// const NewPost = React.lazy(() => import('./NewPost/NewPost'));
+const NewPost = React.lazy(() => import('./NewPost/NewPost')); //Async importing
 
 class Blog extends Component {
     state = {
@@ -15,7 +14,7 @@ class Blog extends Component {
                 <header>
                     <nav>
                         <ul>
-                            <NavLink exact activeClassName="my-active " to={{
+                            <NavLink exact activeClassName="active" to={{
                                 pathname: '/posts',
                                 hash: '#submit',
                                 search: 'quick-services=true' //query string
@@ -26,13 +25,17 @@ class Blog extends Component {
                         </ul>
                     </nav>
                 </header>
-                {/* <Suspense fallback={<h1>Loading...</h1>}>
-                        <NewPost /> 
-                </Suspense> */}
                 <Switch>
-                    {/* <Route render={() => <h1>Not Found</h1>}/> */}
-                    
-                    {this.state.auth ? <Route path='/new-post' exact component={NewPost}/> : null}
+                    {this.state.auth ? (
+                    <Route 
+                        path='/new-post' 
+                        exact 
+                        render={() => (
+                            <Suspense fallback={<h1>Loading...</h1>}>
+                                <NewPost /> 
+                            </Suspense>
+                        )}/> 
+                    ) : null}
                     <Route path='/posts' component={Posts}/> 
                     <Redirect from="/" to="/posts"/>
                 </Switch>

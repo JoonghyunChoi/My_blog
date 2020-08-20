@@ -26,6 +26,10 @@ class Posts extends React.Component {
             .catch(error => console.log(error));
     }
 
+    delListener = (delID) => {
+        console.log(delID);
+    }
+
     render() {
         let posts = this.state.posts.map(post => 
             <Link to={'/posts/' + post.id} key={post.id}>
