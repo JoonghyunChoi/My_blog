@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {withRouter} from 'react-router-dom';
 import './NewPost.css';
 import axios from 'axios';
 
@@ -18,7 +19,7 @@ class NewPost extends Component {
         axios.post('https://jsonplaceholder.typicode.com/posts', post)
         .then(response => {
             console.log(response);
-            this.props.history.push('/posts');
+            this.props.history.push('/posts'); 
         }); 
     }
 
@@ -45,4 +46,4 @@ class NewPost extends Component {
     }
 }
 
-export default NewPost;
+export default withRouter(NewPost); //withRouter로 <Suspense>안에서 이 컴포넌트를 호출해도, 이 컴포넌트 내에서 this.props를 받을 수 있다.
