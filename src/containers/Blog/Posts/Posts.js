@@ -14,7 +14,7 @@ class Posts extends React.Component {
     componentDidMount() {
         axios.get('/posts')
             .then(response => {
-                const posts = response.data.slice(0, 4);
+                const posts = response.data.slice(0, 3);
                 const updatedPosts = posts.map(post => {
                     return {
                         ...post,
@@ -47,4 +47,4 @@ class Posts extends React.Component {
     }
 }
 
-export default Posts;
+export default Posts

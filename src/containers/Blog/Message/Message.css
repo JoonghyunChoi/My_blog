@@ -1,0 +1,13 @@
+.Message-Container {
+    width: 70%;
+    margin: 60px auto;
+}
+
+.Mhead {
+    border-bottom: 1px solid;
+    font-size: 30px;
+}
+
+.Mbody {
+    font-size: 16px;
+}

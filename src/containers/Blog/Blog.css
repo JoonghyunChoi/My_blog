@@ -1,9 +1,10 @@
 .Blog ul {
     list-style-type: none;
     display: flex;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
-    justify-content: center;
 }
 
 .Blog li {
