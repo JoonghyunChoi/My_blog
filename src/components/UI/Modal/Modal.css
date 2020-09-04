@@ -1,0 +1,28 @@
+.Modal {
+    position: fixed;
+    left: 25%;
+    top: 30%;
+    z-index: 500;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 12px 0px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    width: 50%;
+    padding: 16px;
+    box-sizing: border-box;
+    animation: 0.4s ease-in-out 0s 1 normal forwards running hwrkPK;
+}
+
+@keyframes hwrkPK {
+    0% {
+        opacity: 0;
+        transform: translateY(400px) scale(0.75);
+    }
+    75% {
+        opacity: 1;
+        transform: translateY(-16px) scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1); 
+    }
+}

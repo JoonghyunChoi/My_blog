@@ -14,7 +14,7 @@ class Posts extends React.Component {
     componentDidMount() {
         axios.get('/posts')
             .then(response => {
-                const posts = response.data.slice(0, 3);
+                const posts = response.data.slice(0, 9);
                 const updatedPosts = posts.map(post => {
                     return {
                         ...post,
@@ -45,7 +45,7 @@ class Posts extends React.Component {
                 <section className="Posts">
                     {posts}
                 </section>
-                <Route path={this.props.match.url + "/:id"} exact component={FullPost}/>
+                
             </div>
         )
     }

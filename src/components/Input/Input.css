@@ -1,0 +1,27 @@
+.Input {
+    width: 100%;
+}
+
+.InputElement {
+    width: 100%;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    margin: 13px 0;
+    outline: none;
+    border: 1px solid #ccc;
+    font: inherit;
+}
+
+.InputElement:focus {
+    background-color: #ccc;
+}
+
+.Invalid {
+    border: 1px solid red;
+    background-color: salmon;
+}
+
+.errorMessage {
+    color: red;
+    margin: 6px 0;
+}

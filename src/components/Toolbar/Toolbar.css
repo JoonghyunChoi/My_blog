@@ -1,0 +1,42 @@
+.Toolbar ul {
+    list-style-type: none;
+    display: flex;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+.Toolbar li {
+    margin: 20px;
+}
+
+.Nav a {
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+}
+
+a {
+    font-family: 'Questrial', sans-serif;
+}
+
+.Toolbar a:hover,
+.Toolbar a:active,
+.Toolbar a.active {
+    color: black;
+}
+
+.Nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.Nav--right {
+    display: flex;
+}
+
+.Nav--right button{
+    margin-left: 20px;
+}
