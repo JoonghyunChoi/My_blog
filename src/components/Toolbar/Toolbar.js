@@ -5,6 +5,7 @@ import Search from '../../components/Input/Search/Search';
 import Backdrop from './../../components/UI/Backdrop/Backdrop';
 import Modal from './../../components/UI/Modal/Modal';
 import Button from '../UI/Button/Button';
+import Auth from '../../containers/Auth/Auth';
 
 class Toolbar extends React.Component {
     state = {
@@ -43,7 +44,8 @@ class Toolbar extends React.Component {
                     </nav>
                 </header>
                 <Backdrop clicked={this.BackdropClicked} show={this.state.show}/>
-                <Modal show={this.state.show}>
+                <Modal show={this.state.show}> 
+                    <Auth show={this.state.show}/>
                 </Modal>
             </div>         
         )

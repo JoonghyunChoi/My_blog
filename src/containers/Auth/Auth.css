@@ -1,0 +1,39 @@
+.Auth {
+    display: flex;
+}
+.white-block {
+    width: 216px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.welcome {
+    font-size: 1.75rem;
+    margin-top: 1.5rem;
+    color: rgb(73, 80, 87);
+    text-align: center;
+    font-weight: 600;
+}
+
+.gray-block {
+    width: 70%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(241, 243, 245);
+    flex: 1 1 0%;
+}
+
+.close {
+    cursor: pointer;
+    width: 100%;
+    display: flex !important;
+    justify-content: flex-end;
+    font-size: 1.5rem;
+    color: rgb(134, 142, 150);
+    margin-bottom: 2.25rem;
+}
