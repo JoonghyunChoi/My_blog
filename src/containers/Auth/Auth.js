@@ -124,7 +124,6 @@ const mapStateToProps = store => {
         loading: store.auth.loading,
         error: store.auth.error,
         token: store.auth.token,
-        ingredients: store.burgerBuilder.ingredients
     }
 }
 
