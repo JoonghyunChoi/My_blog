@@ -26,5 +26,7 @@
     "react-redux": "^7.2.1",
     "redux": "^4.0.5"
   },
-  "homepage": "https://iwannagotonewyork.github.io/My_blog"
+  "homepage": "https://iwannagotonewyork.github.io/My_blog",
+  "proxy": "http://3.35.91.103:3001"
+  
 }

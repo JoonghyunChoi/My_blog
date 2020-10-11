@@ -1,13 +1,142 @@
-.Message-Container {
-    width: 70%;
-    margin: 60px auto;
+.board {
+    width: 90%;
+    margin: 20px auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    text-align: left;
 }
 
-.Mhead {
-    border-bottom: 1px solid;
+.message {
+    width: 90%;
+    margin: 20px auto;
+    margin-bottom: 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    text-align: left;
+}
+
+.parentComment {
+    width: 90%;
+    margin: 0px auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    text-align: left;
+}
+
+.childComment {
+    width: 86%;
+    margin: 0px auto;
+    margin-right: 59px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    text-align: left;
+}
+
+
+.parentCommentInput input {
+    display: block;
+    margin: 0px auto;
+    width: 90%;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    outline: none;
+    font: inherit;
+}
+
+.parentCommentButton {
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-right: 60px;
+}
+
+.parentCommentButton button{
+    padding: 10px;
+    font: inherit;
+    border: 1px solid #fa923f;
+    background-color: transparent;
+    color: #fa923f;
+    cursor: pointer;
+}
+.parentCommentButton button:hover,
+.parentCommentButton button:active{
+    color: white;
+    background-color: #fa923f;
+}
+
+
+.childCommentInput input {
+    display: block;
+    margin: 0px auto;
+    width: 86%;
+    margin-right: 59px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    outline: none;
+    font: inherit;
+}
+
+.childCommentButton {
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-right: 60px;
+}
+
+.childCommentButton button{
+    padding: 10px;
+    font: inherit;
+    border: 1px solid #fa923f;
+    background-color: transparent;
+    color: #fa923f;
+    cursor: pointer;
+}
+.childCommentButton button:hover,
+.childCommentButton button:active{
+    color: white;
+    background-color: #fa923f;
+}
+
+
+.title {
     font-size: 30px;
 }
 
-.Mbody {
+.contents {
     font-size: 16px;
+}
+
+.writer {
+    font-size: 16px;
+}
+
+.dates {
+    margin-top: -15px;
+    font-size: 14px;
+}
+
+
+.reply {
+    width: 5%;
+    color: black;
+}
+
+.reply:hover {
+    cursor: pointer;
 }

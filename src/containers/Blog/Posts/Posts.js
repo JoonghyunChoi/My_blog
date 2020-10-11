@@ -11,7 +11,7 @@ class Posts extends React.Component {
         selectedPost: null,
     }
 
-    componentDidMount() {
+    componentDidMount() {   
         axios.get('/posts')
             .then(response => {
                 const posts = response.data.slice(0, 9);
