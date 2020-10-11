@@ -1,7 +1,5 @@
 .QA-Container {
-    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     width: 90%;
     margin: 30px auto;
 }
@@ -25,24 +23,24 @@ th {
     font-size: 18px;
 }
 
-th.QA-TableHeadCol1 { 
+th.headCol1 { 
     width: 50px;
     padding: 0 0 0 15px
 }
 
-th.QA-TableHeadCol2 { 
+th.headCol2 { 
     width: 600px
 }
 
-th.QA-TableHeadCol3 { 
+th.headCol3 { 
     width: 150px
 }
 
-th.QA-TableHeadCol4 { 
+th.headCol4 { 
     width: 100px
 }
 
-th.QA-TableHeadCol5 { 
+th.headCol5 { 
     width: 200px
 }
 
@@ -50,23 +48,46 @@ td {
     text-align: center;
 }
 
-td.QA-TableBodyData1 { 
+td.bodyData1 { 
     width: 50px
 }
 
-td.QA-TableBodyData2 {
+td.bodyData2 {
     width: 600px
 }
 
-td.QA-TableBodyData3 { 
+td.bodyData3 { 
     width: 150px
 }
 
-td.QA-TableBodyData4 { 
+td.bodyData4 { 
     width: 100px
 }
 
-td.QA-TableBodyData5 { 
+td.bodyData5 { 
     width: 200px
 }
 
+.newpost{
+    margin-top: 10px;
+    margin-left: 93%;
+}
+
+.pages {
+    display: flex;
+    justify-content: center;
+}
+
+.pages button{
+    padding: 10px;
+    font: inherit;
+    border: 1px solid #fa923f;
+    background-color: transparent;
+    color: #fa923f;
+    cursor: pointer;
+}
+.pages button:hover,
+.pages button:active{
+    color: white;
+    background-color: #fa923f;
+}
