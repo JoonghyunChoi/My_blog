@@ -1,4 +1,4 @@
-.QA-Container {
+.QA-container {
     flex-wrap: wrap;
     width: 90%;
     margin: 30px auto;
@@ -23,24 +23,24 @@ th {
     font-size: 18px;
 }
 
-th.headCol1 { 
+th.head-col1 { 
     width: 50px;
     padding: 0 0 0 15px
 }
 
-th.headCol2 { 
+th.head-col2 { 
     width: 600px
 }
 
-th.headCol3 { 
+th.head-col3 { 
     width: 150px
 }
 
-th.headCol4 { 
+th.head-col4 { 
     width: 100px
 }
 
-th.headCol5 { 
+th.head-col5 { 
     width: 200px
 }
 
@@ -48,27 +48,27 @@ td {
     text-align: center;
 }
 
-td.bodyData1 { 
+td.body-data1 { 
     width: 50px
 }
 
-td.bodyData2 {
+td.body-data2 {
     width: 600px
 }
 
-td.bodyData3 { 
+td.body-data3 { 
     width: 150px
 }
 
-td.bodyData4 { 
+td.body-data4 { 
     width: 100px
 }
 
-td.bodyData5 { 
+td.body-data5 { 
     width: 200px
 }
 
-.newpost{
+.new-post{
     margin-top: 10px;
     margin-left: 93%;
 }

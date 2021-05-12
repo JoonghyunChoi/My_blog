@@ -9,6 +9,7 @@
     text-align: left;
 }
 
+
 .message {
     width: 90%;
     margin: 20px auto;
@@ -21,7 +22,44 @@
     text-align: left;
 }
 
-.parentComment {
+.parent-reply-form input {
+    display: block;
+    width: 90%;
+    margin: 0px auto;
+    height: 40px;
+    padding-left: 15px;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    outline: none;
+    font: inherit;
+    text-align: left;
+
+}
+
+.parent-reply-button {
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-right: 60px;
+}
+
+.parent-reply-button button{
+    padding: 10px;
+    font: inherit;
+    border: 1px solid #fa923f;
+    background-color: transparent;
+    color: #fa923f;
+    cursor: pointer;
+}
+.parent-reply-button button:hover,
+.parent-reply-button button:active{
+    color: white;
+    background-color: #fa923f;
+}
+
+
+.parent-comment {
     width: 90%;
     margin: 0px auto;
     padding-top: 10px;
@@ -32,7 +70,52 @@
     text-align: left;
 }
 
-.childComment {
+.reply-show {
+    display: block;
+}
+
+.reply-hide {
+    display: none;
+}
+
+.child-reply-form input {
+    display: block;
+    width: 86%;
+    margin: 0px auto;
+    margin-right: 59px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    outline: none;
+    text-align: left;
+}
+
+.child-reply-button {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-right: 60px;
+}
+
+.child-reply-button button{
+    padding: 10px;
+    font: inherit;
+    border: 1px solid #fa923f;
+    background-color: transparent;
+    color: #fa923f;
+    cursor: pointer;
+}
+.child-reply-button button:hover,
+.child-reply-button button:active{
+    color: white;
+    background-color: #fa923f;
+}
+
+
+.child-comment {
     width: 86%;
     margin: 0px auto;
     margin-right: 59px;
@@ -42,75 +125,6 @@
     border: 1px solid #eee;
     box-shadow: 0 2px 3px #ccc;
     text-align: left;
-}
-
-
-.parentCommentInput input {
-    display: block;
-    margin: 0px auto;
-    width: 90%;
-    height: 40px;
-    box-sizing: border-box;
-    border: 1px solid #eee;
-    box-shadow: 0 2px 3px #ccc;
-    outline: none;
-    font: inherit;
-}
-
-.parentCommentButton {
-    text-align: right;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    margin-right: 60px;
-}
-
-.parentCommentButton button{
-    padding: 10px;
-    font: inherit;
-    border: 1px solid #fa923f;
-    background-color: transparent;
-    color: #fa923f;
-    cursor: pointer;
-}
-.parentCommentButton button:hover,
-.parentCommentButton button:active{
-    color: white;
-    background-color: #fa923f;
-}
-
-
-.childCommentInput input {
-    display: block;
-    margin: 0px auto;
-    width: 86%;
-    margin-right: 59px;
-    height: 40px;
-    box-sizing: border-box;
-    border: 1px solid #eee;
-    box-shadow: 0 2px 3px #ccc;
-    outline: none;
-    font: inherit;
-}
-
-.childCommentButton {
-    text-align: right;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    margin-right: 60px;
-}
-
-.childCommentButton button{
-    padding: 10px;
-    font: inherit;
-    border: 1px solid #fa923f;
-    background-color: transparent;
-    color: #fa923f;
-    cursor: pointer;
-}
-.childCommentButton button:hover,
-.childCommentButton button:active{
-    color: white;
-    background-color: #fa923f;
 }
 
 
@@ -131,12 +145,11 @@
     font-size: 14px;
 }
 
-
-.reply {
+.post-comment {
     width: 5%;
-    color: black;
+    color: rgb(100, 100, 100);
 }
 
-.reply:hover {
+.post-comment:hover {
     cursor: pointer;
 }

@@ -21,8 +21,9 @@ class NewPost extends Component {
             token: this.state.token         // this.props.
         }
         axios.post('/frontQABoard/create', post)
-        .then(response => {
+            .then(response => {
             console.log(response);
+            
             this.props.history.push('/qa'); 
         })
         .catch(error => console.log(error)) 

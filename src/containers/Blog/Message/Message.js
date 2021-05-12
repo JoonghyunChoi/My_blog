@@ -3,9 +3,8 @@ import axios from '../../../axios-instance';
 import './Message.css'
 
 class Message extends React.Component {
-    
     state = {
-        message: {title: 'Hello', contents: 'It works!', writer: 'choi', dates: '00/00 00:00'},
+        message: {title: 'Hello', contents: 'It works!', writer: 'Choi', dates: '00/00 00:00'},
         parentComment: '',
         childComment: '',
         comments: [
@@ -14,17 +13,17 @@ class Message extends React.Component {
                 {messageId: 1, parentId: 1, id: 4, writer: 'person3', content: '4', regdate: '00/00 00:00'},
                 {messageId: 1, parentId: null, id: 2, writer: 'person4', content: '2', regdate: '00/00 00:00'}
                 ],
-        replys: []
+        replyForms: []
     }
 
     componentDidMount() {
         if (this.props.match.params.id) {
             axios.get('http://3.35.91.103:3001/frontQABoard/getList') // + this.props.match.params.id
-                .then(response => {this.setState({message: response.data})})
+                .then(response => {this.setState( {message: response.data} )})
                 .catch(error => console.log(error))
 
             axios.get('http://3.35.91.103:3001/frontQABoard/getReply') //  + this.props.match.params.id
-                .then(response => {this.setState( {replys: response.data})})
+                .then(response => {this.setState( {replys: response.data} )})
                 .catch(error => console.log(error))
             }
     }
@@ -50,23 +49,23 @@ class Message extends React.Component {
             .then(response => {console.log(response)})
             .catch(error => console.log(error))
     }
+    
+    showReplyForm = (commentId) => {
+        let replyForms = this.state.replyForms
 
-    replyHandler = (replyId) => {
-        let idList = this.state.replys
-
-        if (idList.includes(replyId)) {
-            idList.splice(idList.indexOf(replyId), 1)
-            this.setState({replys: idList})
-        }
+        if (replyForms.includes(commentId)) {
+            replyForms.splice(replyForms.indexOf(commentId), 1)
+            this.setState( {replyForms: replyForms} )}
+            
         else {
-            idList.push(replyId)
-            this.setState({replys: idList})
+            replyForms.push(commentId)
+            this.setState( {replyForms: replyForms} )
         }
     }
 
-    render() {
+    render() {      // 컴포넌트 분리하기
         return (
-            <div className="Message-Container">
+            <div className="message-container">
                 <div className="board">
                     <h1>질문게시판</h1>
                 </div>
@@ -76,49 +75,40 @@ class Message extends React.Component {
                     <h1 className="title">{this.state.message.title}</h1>
                     <p className="contents">{this.state.message.contents}</p>
                 </div>
-                <div className="parentCommentInput">
+                <div className="parent-reply-form">
                     <input type="text" onChange={(event) => this.setState({parentComment: event.target.value})}></input>
                 </div>
-                <div className="parentCommentButton">
+                <div className="parent-reply-button">
                     <button onClick={this.parentCommentHandler}>reply</button>
                 </div>
 
                 {this.state.comments.map(comment => {
-                
-                 if (comment.parentId === null) {
-                    if (this.state.replys.includes(comment.id)) {
+                if (comment.parentId === null) {
                         return (
                             <div>
-                                <div className="parentComment">
-                                    <p className="pcWriter">{comment.writer}</p>
-                                    <p className="pcContent">{comment.content}</p>
-                                    <p className="pcRegdate">{comment.regdate}</p>
-                                    <p className="reply" onClick={ () => this.replyHandler(comment.id) }>reply</p>
+                                <div className="parent-comment">
+                                    <p className="pc-writer">{comment.writer}</p>
+                                    <p className="pc-content">{comment.content}</p>
+                                    <p className="pc-regdate">{comment.regdate}</p>
+                                    <p className="post-comment" onClick={ () => this.showReplyForm(comment.id)}>comment</p>
                                 </div>
-                                <div className="childCommentInput">
-                                    <input type="text" onChange={ (event) => this.setState({childComment: event.target.value}) }></input>
+                                <div className={this.state.replyForms.includes(comment.id) ? "reply-show" : "reply-hide"}>
+                                        <div className="child-reply-form">
+                                            <input type="text" onChange={ (event) => this.setState({childComment: event.target.value}) }></input>
+                                        </div>
+                                        <div className="child-reply-button">
+                                            <button onClick={ () => this.childCommentHandler(comment.id) }>reply</button> 
+                                        </div>
                                 </div>
-                                <div className="childCommentButton">
-                                    <button onClick={ () => this.childCommentHandler(comment.id) }>reply</button> 
-                                </div>  
                             </div>
                         )}
 
-                        return (
-                            <div className="parentComment">
-                                <p className="pcWriter">{comment.writer}</p>
-                                <p className="pcContent">{comment.content}</p>
-                                <p className="pcRegdate">{comment.regdate}</p>
-                                <p className="reply" onClick={ () => this.replyHandler(comment.id) }>reply</p>
-                            </div> 
-                        )}
-
-                if (comment.parentId !== null) { 
+                else { 
                     return (
-                        <div className="childComment" key={comment.id}>
-                            <p className="ccWriter">{comment.writer}</p>
-                            <p className="ccContent">{comment.content}</p>
-                            <p className="ccRegdate">{comment.regdate}</p>
+                        <div className="child-comment" key={comment.id}>
+                            <p className="cc-writer">{comment.writer}</p>
+                            <p className="cc-content">{comment.content}</p>
+                            <p className="cc-regdate">{comment.regdate}</p>
                         </div>
                     )}
                 })}
